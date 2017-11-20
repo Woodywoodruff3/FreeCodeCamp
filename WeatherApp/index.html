@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Revalia" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Revalia|Roboto+Mono" rel="stylesheet">
+	<style>
+		body {
+			background: no-repeat center center fixed;
+			background-size: cover;
+			margin: 0;
+			background-color: #333; 
+		}
+
+		#info {
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 5%;
+			background-color: rgba(0,0,0,0.3);
+			width: 50%;
+			padding: 5%;
+			color: #FFF;
+			border-radius: 25px;
+			font-family: 'Abril Fatface', cursive;
+
+		}
+
+		#tempature{
+			font-family: 'Roboto Mono', monospace;
+			font-size: 1.25em;
+		}
+
+		button {
+		color: #fff;
+		width: 45px;
+		height: 45px;
+		background-color: #a8a7b7;
+		font-family: 'Abril Fatface', cursive;
+	}
+		footer {
+		bottom: 0;
+		width: 100%;
+        position: fixed;        
+        background: #333;
+        padding-top:20px;
+        color: #fff;
+        text-align: center;
+        
+		}
+		footer a{
+			color:#FFF;
+			text-decoration: none;
+
+		}
+
+		a:hover{
+			color:#a8a7b7;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script>
+  
+var weather;
+
+var apiKey = "92aa9bc67f77a5fa90f01a314f5ce333";
+  
+
+var getIP = 'http://ip-api.com/json/';
+var openWeatherMap = 'http://api.openweathermap.org/data/2.5/weather';
+
+$.getJSON(getIP).done(function(location) {
+	//city name pulling from getIP
+	$("#location").html(location.city + ", " + location.region);
+    $.getJSON(openWeatherMap, {
+        lat: location.lat,
+        lon: location.lon,
+        units: 'imperial',
+        APPID: apiKey
+    }).done(function(data) {
+    	//tempature default in Fahrenheit
+
+    	var temp = Math.round(data.main.temp)
+    	$("#temp").html(temp + "° F");
+
+    	//button Toggle between F and C
+    	$("#toggle").on('click', function(){
+  			$("#temp").toggleClass('celcius');
+  			
+			if ($("#temp").hasClass('celcius')) {
+			    $("#temp").text(setCelcius());
+			    return;
+			  }
+
+			  $("#temp").text(setFahrenheit());
+			});
+
+			function setCelcius(){
+			  var cel = Math.round((temp - 32) * 5/9);
+			  $("#toggle").text("F°");
+			  return cel + "° C";
+			};
+
+			function setFahrenheit(){
+				$("#toggle").text("C°")
+			  return temp + "° F";
+};
+        
+		//Wind Directions and Speed
+        var deg = data.wind.deg;
+        var speed = data.wind.speed;
+
+        if (deg > 22.5 && deg <= 67.5 ){
+        		$("#windInfo").html("NE " + Math.round(speed) + " MPH");
+        	} else if (deg > 67.5 && deg <= 112.5 ){
+	        	$("#windInfo").html("E " + Math.round(speed) + " MPH");
+           	} else if (deg > 112.5 && deg <= 157.5 ){
+    	    	$("#windInfo").html("SE " + Math.round(speed) + " MPH");
+        	} else if (deg > 157.5 && deg <= 202.5 ){
+    	    	$("#windInfo").html("S " + Math.round(speed) + " MPH");
+        	} else if (deg > 202.5 && deg <= 247.5 ){
+        		$("#windInfo").html("SW " + Math.round(speed) + " MPH");
+        	} else if (deg > 247.5 && deg <= 292.5 ){
+        		$("#windInfo").html("W " + Math.round(speed) + " MPH");
+        	} else if (deg > 292.5 && deg <= 337.5 ){
+        		$("#windInfo").html("NW " + Math.round(speed) + " MPH");
+        	} else {
+        		$("#windInfo").html("N" + Math.round(speed) + " MPH");
+			}
+
+		var typeOfWeather = data.weather[0].id,
+			backgroundImg = [
+			//thunderstorms
+			'http://cdn.pcwallart.com/images/thunderstorm-rain-wallpaper-4.jpg',
+			
+			//Drizzle
+			'https://cdn.shutterstock.com/shutterstock/videos/8539048/thumb/1.jpg',
+			
+			//rain
+			'http://wallpapercave.com/wp/9EjbNTw.jpg',
+
+			//snow
+			'https://cdn.shutterstock.com/shutterstock/videos/14844502/thumb/1.jpg',
+
+			//Atmosphere
+			'https://s3.amazonaws.com/rocketstockassets/uploads/Fog-Example-1.jpg',
+
+			//clear
+			'http://3.bp.blogspot.com/-z28D6OtYUl8/UZSQ18iby7I/AAAAAAAAAuw/ans8rwcen4o/s1600/clear%2Bsky%2Bbackground.JPG',
+			//cloudy
+			'http://www.photohdx.com/images/2016/02/dramatic-dense-clouds-sky-background.jpg',
+			
+			//Extreme
+			'http://www.baltana.com/files/wallpapers-2/Storm-HD-Wallpapers-04004.jpg',
+
+			//Additional
+			'http://orig11.deviantart.net/81b0/f/2013/353/5/b/on_a_clear_night_sky__background__by_oakfur422-d6yl3xc.png',
+			];
+
+		if (typeOfWeather > 200 && typeOfWeather < 300){
+			 $("body").css("background-image", "url(" + backgroundImg[0] + ")");
+			} else if (typeOfWeather > 300 && typeOfWeather < 400){
+				$("body").css("background-image", "url(" + backgroundImg[1] + ")");
+			} else if (typeOfWeather > 500 && typeOfWeather < 600){
+				$("body").css("background-image", "url(" + backgroundImg[2] + ")");
+				
+			} else if (typeOfWeather > 600 && typeOfWeather < 700){
+				$("body").css("background-image", "url(" + backgroundImg[3] + ")");
+			} else if (typeOfWeather > 700 && typeOfWeather < 800){
+				$("body").css("background-image", "url(" + backgroundImg[4] + ")");
+			} else if (typeOfWeather === 800){
+				$("body").css("background-image", "url(" + backgroundImg[5] + ")");
+			} else if (typeOfWeather >= 801 && typeOfWeather < 900){
+				$("body").css("background-image", "url(" + backgroundImg[6] + ")");
+			} else if (typeOfWeather > 900 && typeOfWeather < 906){
+				$("body").css("background-image", "url(" + backgroundImg[6] + ")");
+			} else {
+				$("body").css("background-image", "url(" + backgroundImg[7] + ")");
+}
+    })  
+})
+
+
+
+  
+  
+</script>
+
+</head>
+
+<body>
+
+	<div id = "info">
+		<h1 class = title>FCC Weather App</h1>
+		<h1 id="location"></h1>
+
+		<div id="tempature">
+			<h3 id="temp"></h3>
+			<h3 id = "windInfo"></h3>
+			<button id="toggle">C°</button>
+		</div>
+	</div>
+	
+	<footer>
+		<a href = 'https://www.freecodecamp.com/challenges/show-the-local-weather'>FCC Challenge - Show Local Weather</a>
+		<p>&copy; 2017 Ross Woodruff</p>	
+	</footer>
+
+
+
+</body>
+
+</html>
