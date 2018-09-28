@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+html,body {
+  background-color: lightgray;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* MOBILE VIEW - Screen size less than 768px */
+
+/* HEADER  */
+#header, #logo, #nav-bar ul {
+  flex-direction: column;
+} 
+#header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: sticky;
+  top:0;
+  width: 100%;
+  background-color: darkgray;
+  border-bottom: 1px solid #52bdd7;
+  box-shadow: 0px 2px 2px #52bdd7;
+  z-index: 1;
+}
+
+#logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#logo img {
+  display: flex;
+  height: 110px;
+  width: 110px;
+}
+
+#logo p {
+  display: flex;
+  margin: 0;
+  font-size: 2em;
+}
+
+#nav-bar ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+
+}
+
+#nav-bar ul li {
+  height: 100%;
+  text-align: center;
+  padding: 5px 0px;
+
+}
+#header div, #header ul, {
+  padding: 10px;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #000;
+}
+
+#nav-bar a:hover {
+  color: #52bdd7
+}
+
+#container {
+  padding: 0 2%;
+}
+
+/* FORM SECTION */
+
+#sec-form {
+  display: block;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+#sec-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input[type="email"] {
+  width: 300px;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* GLOBAL BUTTONS */
+
+.btn{
+  width: 150px;
+  height: 30px;
+  display: block;
+  margin: 0 auto;
+  background-color: #52bdd7;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* SECTIONS */
+
+.sections {
+  position: relative;
+  margin-top: 30px;
+}
+
+.sections a {
+  position: absolute;
+  left: 0px;
+  top: -295px;
+
+}
+
+/* SECTION TYPES */
+.desc {
+  padding: 20px 0;
+}
+
+/* SECTION VIDEO (See the Fun) */
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+/* SECTION PACKAGES */
+
+#sec-packages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#bronze, #silver, #gold {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #52bdd7;
+  padding-bottom: 15px;
+  max-width: 300px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.level {
+  background-color: darkgray;
+  color: black;
+  padding: 15px 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#sec-packages h2 {
+  margin-top: 15px;
+}
+
+#sec-packages ul {
+  padding: 0;
+}
+
+#sec-packages ul li {
+  list-style: none;
+  padding: 3px 0;
+}
+
+.btn:hover {
+  background-color: black;
+  color:#52bdd7;
+  transition: background-color .5s;
+}
+
+/* FOOTER SECTION */
+footer {
+  margin-top: 30px;
+  background-color: darkgray;
+  padding: 20px;
+}
+
+footer ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul li {
+  padding: 0 10px;
+  list-style: none;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+
+footer span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
+
+
+
+/* DESKTOP VIEW */
+
+@media screen and (min-width: 768px){
+  /* HEADER */
+  #header, #logo, #nav-bar ul {
+    flex-direction: row;
+  }
+
+  #header{
+    display: flex;
+    /* align-items: flex-start */
+    /* align-items: flex-end; */
+    align-items: center;
+    justify-content: space-between; 
+    height: 75px;
+
+    z-index: 1;
+    padding-bottom: 0px;          
+  }
+
+  #logo {
+    display: flex;
+    align-items: center;
+    flex-basis: 58%;
+    justify-content: flex-start;
+  }
+
+  #logo img {
+    display: inline;
+    max-height: 75px;
+  }
+
+  #logo p {
+    display: inline-block;
+    margin-left: 3%;
+  }
+
+  #nav-bar{
+    flex-basis: 42%;
+
+  }
+
+  #nav-bar ul{
+    display: flex;
+    width: auto;
+    margin: 0;
+    justify-content: space-around;
+  }
+
+  #nav-bar ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+
+  }
+
+  #container {
+    width: 75%;
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    overflow: auto;
+
+  }
+  /* Global Sections */
+  .sections {
+    position: relative;
+
+  }
+
+  .sections a {
+    position: absolute;
+    left: 0px;
+    top: -78px;
+  }
+
+  /* Section Packages */
+
+  #sec-packages{
+    flex-direction: row;
+  }
+
+  #bronze, #silver, #gold {
+    margin: 15px;
+  }
+}
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div id="logo">
+          <img src="https://cdn.iconscout.com/icon/free/png-256/dolphin-50-569511.png" alt="dolphin-logo" id="header-img">
+          <p>Swim with Dolphins</p>
+        </div>
+        <nav id="nav-bar">
+          <ul>
+            <li><a href="#types" class="nav-link">Types</a></li>
+            <li><a href="#fun" class="nav-link">See the Fun</a></li>
+            <li><a href="#packages" class="nav-link">Packages</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="container">
+        <div id="sec-form">
+          <h2>Join in the fun!!!</h2>
+          <form action="https://www.freecodecamp.com/email-submit" method="get" id="form">
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+            <input type="submit" value="Come Swim" class="btn" id="submit">
+          </form>
+        </div>
+        <section id='sec-types' class="sections">
+          <a id="types">&nbsp;</a>
+          <div class="grid">
+            <div class="desc">
+      
+              <h2>Atlantic Spotted</h2>
+              <p>The Atlantic spotted dolphin is medium-sized.
+                Newborn calves are about 35–43 in (89–109 cm) long, while adults can reach a length of 2.26 m (7 ft 5 in)
+                and a weight of 140 kg (310 lb) in males, and 2.29 m (7 ft 6 in) and 130 kg (290 lb) in females
+              </p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="desc">
+              <h2>Spinner</h2>
+              <p>Small cetaceans with a slim build. Adults are typically 129–235 cm long and reach a body mass of 23–79 kg.
+                This species has an elongated rostrum and a triangular or subtriangular dorsal fin.
+              </p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="desc">
+              <h2>Striped</h2>
+              <p>Smaller size and shape to several other dolphins that inhabit the waters.  It's color is very different and makes it relatively easy
+                to notice at sea. Individuals weigh about 10 kg (22 lb) and are up to a meter (3 feet) long. By adulthood, they have grown to 2.4 m
+                (8 ft) (females) or 2.6 m (8.5 ft) (males) and weigh 150 kg (330 lb) (female) or 160 kg (352 lb) (male).
+              </p>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="desc">
+              <h2>Bottlenose</h2>
+              <p>Bottlenose dolphins live in groups. The bottle-nose dolphin weighs an average of 660 pounds. It can reach a length of just over 13 feet.
+                Its color is usually dark gray on the back and lighter gray on the flanks.
+              </p>
+            </div>
+          </div>
+        </section>
+      
+        <section id="sec-fun"class="sections">
+          <a id="fun">&nbsp;</a>
+          <!-- <video src="#" controls width="500" poster="img.img" id="video"></video> -->
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/qHNoKAACHoA?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen id="video"></iframe>
+        </section>
+      
+      
+        <section id='sec-packages' class="sections">
+          <a id="packages">&nbsp;</a>
+          <div id="bronze">
+            <div class="level">
+              Bronze
+            </div>
+            <h2>$150</h2>
+            <ul>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button class="btn">Select</button>
+          </div>
+          <div id="silver">
+            <div class="level">
+              Silver
+            </div>
+            <h2>$200</h2>
+            <ul>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button class="btn">Select</button>
+          </div>
+          <div id="gold">
+            <div class="level">
+              Gold
+            </div>
+            <h2>$300</h2>
+            <ul>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+              <li>Lorem ipsum.</li>
+            </ul>
+            <button class="btn">Select</button>
+          </div>
+        </section>
+        <footer>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <span>	&#169 2018, Swim with Dolphins</span>
+        </footer>
+      </div>
+</body>
+</html>
