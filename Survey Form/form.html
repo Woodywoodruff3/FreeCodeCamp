@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header h1{
+            margin-bottom: 5px;
+        }
+
+        header p{
+            margin-top: 0px;
+        }
+        #main{
+            max-width: 500px;
+            margin: 0 auto;
+            font-family: 'Oswald', sans-serif;
+            background-color: lightcyan;
+            padding: 10px 0px 20px;
+        }
+        .labels {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+            padding: 10px;
+            
+        }
+
+        .select-labels {
+            vertical-align: top;
+        }
+
+        ul {
+            display: inline-block;
+            margin-top: 10px;
+            padding-left: 00px;
+        }
+
+        li {
+            list-style: none;
+        }
+        
+        textarea{
+            resize: none;
+            height: 100px;
+            width: 200px;
+        }
+        #row-btn{
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #row-btn button{
+            height: 35px;
+            width: 70px;
+            background-color: black;
+            color: lightcyan;
+            border-radius: 5px;
+            border: 0px solid;
+        }
+
+        #row-btn button:hover{
+            box-shadow: 2px 2px 2px cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <div id='main'>
+        <header>
+            <h1 id="title">Build a Survey Form</h1>
+            <p>This is my fake survey</p>
+        </header>
+    
+        <form method="GET" action="/" id='survey-form'>
+            <div class='row'>
+                <div class='labels'>
+                    <label for="name" id='name-label'>* Name:</label>
+                </div>
+                <input type="text" name="name" id="name" placeholder="Name" required>
+            </div>
+            
+            <div class='row'>
+                <div class='labels'>
+                    <label for="email" id='email-label'>* Email:</label>
+                </div>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            
+            <div class='row'>
+                <div class='labels'>
+                    <label for="number" id='number-label'>* Age:</label>
+                </div>
+                <input type="number" name="number" id="number" placeholder="Age" min="13" max='110' required>
+            </div>
+            
+            <div class='row'>
+                <div class='labels'>    
+                    <label for="dropdown" id='dropdown-label'>Favorite Language:</label>
+                </div>
+                <select id='dropdown'>
+                    <option disabled selected value>Select a Language</option>
+                    <option value="html">HTML</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="swift">Swift</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="c++">C++</option>
+                    <option value="ruby">Ruby</option>
+                    <option value="rust">Rust</option>
+                    <option value="elixir">Elixir</option>
+                    <option value="none">None of these</option>
+                </select>
+            </div>
+
+            <div class='row'>
+                <div class='labels select-labels'>
+                    <label for="question">Do you feel undervalued:</label>
+                </div>
+                <ul>
+                    <li><label><input type="radio" name="radio-valued">Yes</label></li>
+                    <li><label><input type="radio" name="radio-valued">No</label></li>
+                    <li><label><input type="radio" name="radio-valued">No Comment</label></li>
+                </ul>
+            </div>
+
+            <div class='row'>
+                <div class="labels select-labels">
+                    <label for="checkbox">Are you looking for a new job?</label>
+                </div>
+                <ul id="checkbox-question">
+                    <li><label><input type="checkbox" name="actively" value="actively">Actively</label></li>
+                    <li><label><input type="checkbox" name="actively" value="6months">Next 6 months</label></li>
+                    <li><label><input type="checkbox" name="actively" value="year">Within a year</label></li>
+                    <li><label><input type="checkbox" name="actively" value="no">No</label></li>
+                </ul>
+            </div>
+
+            <div class='row'>
+                <div class='labels select-labels'>
+                    <label for="comments">More Comments</label>
+                </div>
+                <textarea name="more-comments" placeholder="Enter you comments here..."></textarea>
+            </div>
+            
+            <div id='row-btn'>
+                <button id='submit' type='submit'>Submit</button>
+            </div>
+        </form>
+    </div> <!-- /main -->
+</body>
+</html>
