@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* GLOBAL */
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  padding: 10px;
+  font-size: 1.9em;
+  text-align: center;
+}
+
+/* Navigation Bar */
+#navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 270px;
+  height: 100%;
+  border-right: 2px solid black; 
+}
+
+#navbar ul{
+  padding-left: 0px;
+  height: 88%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+#navbar li {
+  list-style: none;
+  text-align: center;
+  padding: 20px 0px;
+  border-top: 1px solid;
+  position: relative;
+  background-image: linear-gradient(to right, #fff 50%, #eee 50%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+#navbar li:hover{
+  -webkit-transition: all 0.25s ease-in;
+  -moz-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+  background-position: bottom right;
+  
+}
+
+#navbar a {
+  text-decoration: none;
+  color: black
+}
+
+/* Main Document */
+#main-doc {
+  position: absolute;
+  left: 280px;
+  padding: 20px;
+  min-width: 300px;
+  margin-bottom: 75px;
+}
+
+#main-doc header {
+  text-align: left;
+  padding: 0;
+}
+
+#main-doc p {
+  margin-left: 10px;
+}
+
+code{
+  display:block;
+  text-align: left;
+  white-space: pre;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color:#f7f7f7;
+  padding:15px;
+  margin:10px;
+  border-radius:5px;
+}
+
+@media (max-width: 768px){
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top:0;
+    max-height: 268px;
+    width: 100%;
+    z-index: 1;
+  }
+
+  #navbar ul {
+    border-bottom: 2px solid black;
+  }
+  #main-doc{
+    position: relative;
+    top: 290px;
+    left: 0px;
+  }
+  
+}
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <header id="nav-header">Lorem Ipsum</header>
+        <ul>
+            <a href="#lorem_ipsum_1" class="nav-link"><li>Lorem Ipsum #1</li></a>
+            <a href="#lorem_ipsum_2" class="nav-link"><li>Lorem Ipsum #2</li></a>
+            <a href="#lorem_ipsum_3" class="nav-link"><li>Lorem Ipsum #3</li></a>
+            <a href="#lorem_ipsum_4" class="nav-link"><li>Lorem Ipsum #4</li></a>
+            <a href="#lorem_ipsum_5" class="nav-link"><li>Lorem Ipsum #5</li></a>
+            <a href="#lorem_ipsum_6" class="nav-link"><li>Lorem Ipsum #6</li></a>
+            <a href="#lorem_ipsum_7" class="nav-link"><li>Lorem Ipsum #7</li></a>
+            <a href="#lorem_ipsum_8" class="nav-link"><li>Lorem Ipsum #8</li></a>
+            <a href="#lorem_ipsum_9" class="nav-link"><li>Lorem Ipsum #9</li></a>
+            <a href="#lorem_ipsum_10" class="nav-link"><li>Lorem Ipsum #10</li></a>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section id="lorem_ipsum_1" class="main-section">
+            <header>Lorem Ipsum #1</header>
+            <p>
+                Lorem fames dictumst taciti volutpat sociosqu. Sed, 
+                mollis vivamus tortor felis curae; ultricies cras augue 
+                volutpat. Nascetur tempus gravida faucibus. Mattis molestie cum duis 
+                duis ac habitasse scelerisque, eleifend quisque vitae. 
+                Vivamus elementum suscipit ad curae; ridiculus sagittis platea! 
+                Accumsan sodales venenatis ad habitant nostra eu sagittis auctor adipiscing, 
+                aptent dictum. Proin magnis dictum luctus. Per dapibus nibh per netus nunc 
+                semper vehicula nam accumsan placerat porttitor! Sociosqu blandit auctor 
+                aliquam elementum praesent pellentesque nec. Nibh molestie est nisl 
+                vestibulum senectus duis fusce fusce blandit potenti.
+            </p>
+            <p>
+                Morbi leo habitasse varius, lectus luctus primis bibendum aenean habitasse 
+                sodales consectetur. Ut facilisis quam per consectetur metus dapibus turpis 
+                vestibulum praesent. Ipsum ligula tincidunt, rhoncus primis massa tempus 
+                vitae vulputate litora nam. Velit cras fermentum aliquet etiam placerat 
+                fames elementum mus a. Penatibus pharetra ac arcu tortor est bibendum.
+            </p>
+        </section>
+        <section id="lorem_ipsum_2" class="main-section">
+            <header>Lorem Ipsum #2</header>
+            <p>
+                Praesent curae; nec torquent mattis dis fames imperdiet interdum senectus velit 
+                penatibus! Nulla faucibus; porttitor venenatis facilisi placerat. Risus sapien 
+                faucibus vel sem quisque senectus, nibh potenti duis sapien. Massa bibendum 
+                volutpat ligula at, nascetur tempor dictum proin vel conubia himenaeos. Ipsum 
+                amet torquent per mus at class sollicitudin, magna nunc torquent dictum cubilia? 
+                Turpis netus congue torquent proin libero.
+            </p>
+        </section>
+        <section id="lorem_ipsum_3" class="main-section">
+            <header>Lorem Ipsum #3</header>
+            <p>
+                Iaculis amet dictumst, ultricies leo! Mus magna sociis porta magnis natoque 
+                morbi enim blandit. Vehicula convallis ad fusce adipiscing. Natoque per vivamus 
+                augue suscipit volutpat vivamus vulputate. Viverra nibh accumsan scelerisque 
+                placerat posuere semper. Aptent ornare morbi sollicitudin varius lectus 
+                vestibulum aenean inceptos convallis pellentesque purus cum. Commodo eleifend, 
+                mauris tellus senectus litora lacus maecenas luctus donec luctus. Facilisis 
+                gravida vel nisi mi sagittis. Massa bibendum hendrerit pellentesque eu.
+            </p>
+        </section>
+        <section id="lorem_ipsum_4" class="main-section">
+            <header>Lorem Ipsum #4</header>
+            <p>
+                Vehicula nam luctus urna potenti vivamus platea tempus magnis.
+                <ul>
+                    <li>Id magnis dictum viverra</li>
+                    <li>elit enim est mus mattis fermentum potenti iaculis per scelerisque cubilia</li>
+                    <li>Seper vel</li>
+                </ul>
+            </p>
+        </section>
+        <section id="lorem_ipsum_5" class="main-section">
+            <header>Lorem Ipsum #5</header>
+            <p>
+                Porttitor mauris commodo congue facilisis quis porta gravida mollis dis. 
+                Nisl euismod luctus curae; bibendum ultricies. Dui sociis tincidunt nam metus, 
+                curae; ut orci cubilia mauris dictumst. Accumsan metus turpis praesent enim, 
+                rutrum dictum tempor sagittis maecenas pellentesque turpis. Erat ad a neque 
+                facilisi curae;, eleifend cursus vestibulum class at.
+            </p>
+        </section>
+        <section id="lorem_ipsum_6"class="main-section">
+            <header>Lorem Ipsum #6</header>
+            <p>
+                Vestibulum cubilia quisque tristique potenti quis nunc nostra aliquam elit 
+                sociis. Taciti auctor ornare nunc sollicitudin id torquent. Phasellus est non 
+                dui posuere est. Tincidunt.
+            </p>
+        </section>
+        <section id="lorem_ipsum_7" class="main-section">
+            <header>Lorem Ipsum #7</header>
+            <p>
+                Posuere eros dignissim aliquet consequat. Mattis faucibus dictum potenti vitae.
+            </p>
+            <ul>
+                <li>Nostra fames feugiat semper sed sodales sagittis semper euismod! Scelerisque 
+                    sociosqu vestibulum ultrices.</li>
+                <li>Elementum sapien lacus lacinia. Rhoncus!</li>
+            </ul>
+            <p>Lectus pellentesque aptent auctor, torquent dis. Etiam ullamcorper maecenas aliquet curae; 
+                interdum metus conubia facilisi. Velit porttitor massa augue dui maecenas semper enim 
+                iaculis. Praesent commodo natoque habitant praesent etiam.
+            </p>
+        </section>
+        <section id="lorem_ipsum_8" class="main-section">
+            <header>Lorem Ipsum #8</header>
+            <p>
+                Nec porta ultricies metus massa adipiscing ad nisi ridiculus non porttitor 
+                iaculis lacus mi egestas imperdiet bibendum pharetra molestie taciti arcu 
+                tempus vel neque feugiat habitant montes habitant donec euismod.
+            </p>
+            <p>
+                Sit primis pharetra neque gravida nec sollicitudin fermentum dignissim 
+                parturient gravida ut ac torquent aliquet rhoncus hac pellentesque habitant 
+                lacus ultricies risus amet mauris odio urna euismod facilisis vulputate dolor!
+            </p>
+        </section>
+        <section id="lorem_ipsum_9" class="main-section">
+            <header>Lorem Ipsum #9</header>
+            <p>
+                Skaar nuke mentor piledriver namorita groot rand morph blade, warpath thanos. 
+                Banner patch cypher kingpin silversurfer madthinker clea redhulk tusk sunspot 
+                blackwidow chameleon. Punisher, thing johnnystorm urich. Dumdum x-men 
+                rocketraccoon shiva cyber lifeguard shield. Nightmare deathstrike tonystark 
+                songbird sabretooth. Janefoster dumdum quasar clea wong uatu braddock beyonder 
+                silversurfer maverick yellowjacket amora korvac. Reaper lilith smasher, 
+                gladiator aurora octopus rocketraccoon modok? Paladin sauron mayparker 
+                cannonball psylocke magneto uatu jameson ares swordsman. X-men quasimodo 
+                vulture zemo longshot callisto. Yellowjacket masque diablo beast whiplash. 
+                Osborn logan steverogers northstar wolfsbane captainbritain domino spider-man 
+                hepzibah. Crossbones strange inhumans rogue jessicajones beyonder ares hankpym 
+                zola, ego.
+            </p>
+        </section>
+        <section id="lorem_ipsum_10" lorem_ipsum_class="main-section">
+            <header>Lorem Ipsum #10</header>
+            <ul>
+                <li>All ipsum generated by <a href="https://www.freeformatter.com/lorem-ipsum-generator.html">www.freeformatter.com</a></li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
